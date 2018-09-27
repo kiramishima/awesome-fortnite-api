@@ -1,24 +1,24 @@
-import { Headers } from "../Interfaces/Headers";
+import { ForniteHeaders } from '../Interfaces/Headers';
 import { HttpClient } from "../Interfaces/HttpCall";
 import { Player } from "../Interfaces/Player";
 
 export class FortniteUser {
-  private api_endpoint;
-  private headers: Headers;
-  constructor(parent) {
-    this.api_endpoint = parent.api_endpoint;
-    this.headers = parent.headers;
+  private API_ENDPOINT: string;
+  private headers: ForniteHeaders;
+  constructor(apiEndpoint: string, headers: ForniteHeaders) {
+    this.API_ENDPOINT = apiEndpoint;
+    this.headers = headers;
   }
 
-  id() {
-    fetch({
-      url: `${this.api_endpoint}/users/id`,
-      headers: this.headers,
-      
+  public async id() {
+    await fetch({
+      url: `${this.API_ENDPOINT}/users/id`,
+      headers: {},
+      body: {}
     })
   }
 
-  call() {
+  public call() {
     return null;
   }
 }
