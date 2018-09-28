@@ -10,7 +10,7 @@ export class ForniteClient {
     private headers: ForniteHeaders;
     constructor() {
         this.headers = {
-            "Authorization": this.apiKey,
+            "Authorization": "",
             "X-Fortnite-API-Version": this.API_VERSION,
             "X-Fortnite-Client-Info": "Linux AWS",
             "X-Fortnite-Client-Version": this.CLIENT_VERSION,
@@ -20,5 +20,6 @@ export class ForniteClient {
 
     public setKey(key: string | any): void {
         this.apiKey = key;
+        this.headers.Authorization = key;
     }
 }
