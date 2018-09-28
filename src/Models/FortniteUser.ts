@@ -30,6 +30,13 @@ export class FortniteUser {
     return response.platforms;
   }
 
+  public async getUsernameFromId(ids: string[]): Promise<string[]> {
+    let response: IPlayer = await fetch(`${this.API_ENDPOINT}/users/username%20out%20of%20id${username}`, <RequestInit>{
+      headers: this.headers as Object,
+    }).then((resp: Response) => resp.json())
+    return response.platforms;
+  }
+
   public call() {
     return null;
   }
