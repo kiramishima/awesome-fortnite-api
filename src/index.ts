@@ -1,5 +1,7 @@
+const fetch = require("node-fetch");
 import { ForniteHeaders } from "./Interfaces/Headers";
 import { FortniteUser } from "./Models/FortniteUser";
+import { IStatus } from "./Interfaces/IStatus";
 
 export class ForniteClient {
     public user: FortniteUser;
@@ -21,5 +23,13 @@ export class ForniteClient {
     public setKey(key: string | any): void {
         this.apiKey = key;
         this.headers.Authorization = key;
+    }
+
+    public async checkStatus(): Promise<string> {
+        const response: IStatus = await fetch(`${this.API_ENDPOINT}/status/fortnite_server_status`, {
+            // tslint:disable-next-line:ban-types
+            headers: this.headers as Object,
+        }).then((resp: Response) => resp.json());
+        return response.status;
     }
 }

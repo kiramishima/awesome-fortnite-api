@@ -1,4 +1,4 @@
-export interface Status {
+export interface IStatus {
     status: string;
     message: string;
     version: number;
