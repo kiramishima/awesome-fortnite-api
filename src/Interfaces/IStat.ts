@@ -1,4 +1,4 @@
-export interface Stat {
+export interface IStat {
     kills_solo: number;
     placetop1_solo: number;
     placetop10_solo: number;
