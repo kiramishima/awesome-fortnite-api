@@ -1,14 +1,14 @@
 # fortnite-api
 A Node.js wrapper of fortniteapi.com
-## Installation 
+## Installation
 ```sh
-npm install fortnite-api --save
-yarn add fortnite-api
+npm install awesome-fortnite-api --save
+yarn add awesome-fortnite-api
 ```
 ## Usage
 ### Javascript
 ```javascript
-const FortniteClient = require("fortnite-api").FortniteClient;
+const ForniteClient = require("awesome-fortnite-api").ForniteClient;
 const client = new ForniteClient();
 client.setKey(process.env.FORTNITE_APIKEY);
 client.user.id("Ninja").then(res => console.log(res));
@@ -18,7 +18,7 @@ Output should be '4735ce9132924caf8a5b17789b40f79c'
 ```
 ### TypeScript
 ```typescript
-import { ForniteClient } from 'fortnite-api';
+import { ForniteClient } from 'awesome-fortnite-api';
 const client = new ForniteClient();
 client.setKey(process.env.FORTNITE_APIKEY);
 client.user.id("Ninja").then(res => console.log(res));
