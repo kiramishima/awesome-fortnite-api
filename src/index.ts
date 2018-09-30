@@ -3,10 +3,12 @@ import { ForniteHeaders } from "./Interfaces/Headers";
 import { FortniteUser } from "./Models/FortniteUser";
 import { IStatus } from "./Interfaces/IStatus";
 import { FortniteChallenge } from "./Models/FortniteChallenge";
+import { FortniteLeaderboard } from './Models/FortniteLeaderboard';
 
 export class ForniteClient {
     public user: FortniteUser;
     public challenges: FortniteChallenge;
+    public leaderboard: FortniteLeaderboard;
     private CLIENT_VERSION: number = 3.1;
     private API_ENDPOINT: string = "https://fortnite-public-api.theapinetwork.com/prod09/";
     private API_VERSION: string = "v1.1";
@@ -21,6 +23,7 @@ export class ForniteClient {
         };
         this.user = new FortniteUser(this.API_ENDPOINT, this.headers);
         this.challenges = new FortniteChallenge(this.API_ENDPOINT, this.headers);
+        this.leaderboard = new FortniteLeaderboard(this.API_ENDPOINT, this.headers);
     }
 
     public setKey(key: string | any): void {
